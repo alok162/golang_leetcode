@@ -21,11 +21,9 @@ func numDecodingsUtil(s string, n int, result int) int {
     } else {
         result = 0
         if string(s[n-1]) > "0" {
-            fmt.Println("first call-----", n)
             result += numDecodingsUtil(s, n-1, result)
         }
         if string(s[n-2]) == "1" || (string(s[n-2]) == "2" && string(s[n-1]) < "7") {
-            fmt.Println("second call-----", n)
             result += numDecodingsUtil(s, n-2, result)
         }
         return result
